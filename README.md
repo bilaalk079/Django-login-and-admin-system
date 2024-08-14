@@ -56,18 +56,20 @@ To use this project follow the steps below
 python manage.py makemigrations
 ```
 
-#Apply the migrations to set up the database schema:
+Apply the migrations to set up the database schema:
  ```bash
   python manage.py migrate
 ```
-#Run the Development Server:
+Run the Development Server:
 ```bash
 python manage.py runserver
 ```
-#Access the Project:
+Access the Project:
 
-#Open a web browser and go to http://127.0.0.1:8000/ to access the project.
- you can customize 'your-database-name' into any name of your choice
+Open a web browser and go to http://127.0.0.1:8000/ to access the project.
+ you can customize 'your-database-name' into any name of your choice.
+ #To Register an admin navigate to http://127.0.0.1:8000/regadmin
+
 
    
  
