@@ -1,0 +1,52 @@
+{% extends 'admin_dashboardbase.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+  All Users
+{% endblock %}
+{% block content %}
+  <h2>All Users</h2>
+  <input type="text" class="form-control" id="my_input" />
+  <br>
+  <table class="table table-bordered table-stripped table-hover">
+    <thead>
+      <th>Sn</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Date of Birth</th>
+      <th>View Details</th>
+    </thead>
+    <tbody id="my_search">
+      {% for each_user in get_all_users_info %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ each_user.name }}</td>
+          <td>{{ each_user.phone }}</td>
+          <td>{{ each_user.gender }}</td>
+          <td>{{ each_user.email }}</td>
+          <td>{{ each_user.dob }}</td>
+          <td>
+            <a href="/single_user/{{ each_user.id }}" style="color: lightgreen;">Details</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <!-- jQuery -->
+  <script src="{% static 'cdn/jQuery-3.1.1.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'cdn/jQuery-ui.min.js' %}" type="text/javascript"></script>
+  <link href="{% static 'cdn/jQuery-ui.min.css' %}" rel="stylesheet" type="text/css" />
+
+  <script>
+    $(document).ready(function () {
+      $('#my_input').keyup(function () {
+        var my_input = $(this).val().toLowerCase();
+        $('#my_search tr').filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(my_input) > -1);
+        })
+      })
+    })
+  </script>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% load static %}
+{% load humanize %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+    <!--jQuery-->
+    <script src="{% static 'cdn/jQuery-3.1.1.min.css' %}" type="text/javascript"></script>
+    <script src="{% static 'cdn/jQuery-ui.min.jss' %}" type="text/javascript"></script>
+    <link href="{% static 'cdn/jQuery-ui.min.js' %}" rel="stylesheet" type="text/css">
+     <!--Bootstrap-->
+     <script src="{% static 'cdn/popper.min.js' %}"></script>
+     <link href="{% static 'cdn/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="{% static 'cdn/bootstrap.min.css' %}">
+     <script src="{% static 'cdn/bootstrap.min.js' %}"></script>
+     <link rel="stylesheet" href="{% static 'cdn/bootstrap1.min.css' %}">
+     <link rel="stylesheet" href="{% static 'aos/aos.css' %}">
+    <style>
+      #wrapper {
+        display: flex;
+      }
+      #sidebar-wrapper {
+        min-height: 100vh;
+        width: 250px;
+        transition: margin 0.25s ease-in;
+      }
+      #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+      }
+      #page-content-wrapper {
+        width: 100%;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body class="bg-secondary">
+    <div class="d-flex" id="wrapper">
+      <div class="border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+          <a href="/admin_dashboard" style="color: rgb(23, 72, 90)" class="list-group-item list-group-item-action">Admin Home</a>
+          <a href="/all_users" style="color: rgb(23, 72, 90)" class="list-group-item list-group-item-action">All Users</a>
+          <a href="/edit_admin" style="color: rgb(23, 72, 90)" class="list-group-item list-group-item-action">Edit Admin profile</a>
+          <a href="/logout" style="color: rgb(23, 72, 90)" class="list-group-item list-group-item-action">logout</a>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="menu-toggle">&range;</button>
+      <div id="page-content-wrapper">
+        <center style="background-color:lightgreen; font-size:20px;">Welcome Admin {{ user.userinfo.name }}</center>
+        <br />
+
+        <hr style="background-color:lightgreen; height:5px;" />
+        <br />
+
+        {% block content %}
+
+        {% endblock %}
+
+        {% for message in messages %}
+          <input type="hidden" value="{{ message }}" id="get_message" />
+
+          <script>
+            var msg = document.getElementById('get_message').value
+            alert(msg)
+          </script>
+        {% endfor %}
+      </div>
+
+      <script>
+        const bar = document.getElementById('sidebar-wrapper')
+        const toggle = document.getElementById('menu-toggle')
+        toggle.onclick = function () {
+          if (bar.style.display === 'none') {
+            bar.style.display = 'block'
+          } else {
+            bar.style.display = 'none'
+          }
+        }
+      </script>
+    </div>
+      
+  </body>
+</html>

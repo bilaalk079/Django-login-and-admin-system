@@ -1,0 +1,85 @@
+{% extends 'admin_dashboardbase.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+  Single User
+{% endblock %}
+{% block content %}
+<a href="/all_users" style="font-size: 20px;" class="btn btn-primary"><-</a>
+  <h3 class="text-center" style="font-weight: bold; font-size: 48px; color: lightgreen;"><span id="get_user" style="text-decoration: underline;">{{ single_identity.name }}</span> info</h3>
+  <ul class="text-white">
+    <li>Username: {{ single_identity.username }}</li>
+    <li>Phone: {{ single_identity.phone }}</li>
+    <li>Email: {{ single_identity.email }}</li>
+    <li>Date of Birth: {{ single_identity.dob }}</li>
+    <li>Gender: {{ single_identity.gender }}</li>
+    <li hidden >Status: {{ single_identity.status }}</li>
+  </ul>
+  <br />
+  <div class="row">
+    {% if single_identity.status == 'block' %}
+      <div class="col-sm-1">
+        <a id="confirm-unblock" href="/unblock/{{ single_identity.id }}" class="btn btn-success">Unblock</a>
+      </div>
+    {% else %}
+      <div class="col-sm-1">
+        <a id="confirm-block" href="/block/{{ single_identity.id }}" class="btn btn-dark">Block</a>
+      </div>
+    {% endif %}
+
+    <div class="col-sm-1">
+      <a id="confirm" href="/delete/{{ single_identity.id }}" class="btn btn-danger">Delete</a>
+    </div>
+    <div class="col-sm-10"></div>
+  </div>
+  <br />
+
+  <!-- jQuery -->
+  <link href="{% static 'cdn/jQuery-ui.min.css' %}" rel="stylesheet" type="text/css" />
+  <script src="{% static 'cdn/jQuery-ui.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'cdn/jQuery-3.1.1.min.js' %}" type="text/javascript"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#confirm').click(function (e) {
+        e.preventDefault
+        var get_user = document.getElementById('get_user').innerHTML
+        var confirm22 = confirm('Are you sure you want to delete User: ' + get_user)
+        if (confirm22 === true) {
+          return true
+        } else {
+          return false
+        }
+      })
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#confirm-block').click(function (e) {
+        e.preventDefault
+        var get_user = document.getElementById('get_user').innerHTML
+        var confirm22 = confirm('Are you sure you want to Block User: ' + get_user)
+        if (confirm22 === true) {
+          return true
+        } else {
+          return false
+        }
+      })
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#confirm-unblock').click(function (e) {
+        e.preventDefault
+        var get_user = document.getElementById('get_user').innerHTML
+        var confirm22 = confirm('Are you sure you want to Unblock User: ' + get_user)
+        if (confirm22 === true) {
+          return true
+        } else {
+          return false
+        }
+      })
+    })
+  </script>
+{% endblock %}

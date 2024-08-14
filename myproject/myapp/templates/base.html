@@ -1,0 +1,53 @@
+{% load static %}
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <!--Tab Image Icon-->
+
+    <!--jQuery-->
+    <script src="{% static 'cdn/jQuery-3.1.1.min.css' %}" type="text/javascript"></script>
+    <script src="{% static 'cdn/jQuery-ui.min.jss' %}" type="text/javascript"></script>
+    <link href="{% static 'cdn/jQuery-ui.min.js' %}" rel="stylesheet" type="text/css">
+
+    <!--Bootstrap-->
+    <script src="{% static 'cdn/popper.min.js' %}"></script>
+    <link href="{% static 'cdn/font-awesome.min.css' %}" rel="stlesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'cdn/bootstrap.min.css' %}">
+    <script src="{% static 'cdn/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'cdn/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'aos/aos.css' %}">
+</head>
+<body class="container bg-secondary">
+    <center style="background-color:lightgreen; font-size:40px;">WELCOME TO DJANGO</center>
+    <br>
+    <div >
+        <a href="/" style="color: rgb(23, 72, 90)" class="p-3">Home</a>&nbsp;&nbsp;
+        <a href="/calculator" style="color: rgb(23, 72, 90)" class="p-3">Calculator</a>&nbsp;&nbsp;
+        <a href="/registration" style="color: rgb(23, 72, 90)" class="p-3">Registration form</a>
+        <a href="/login" style="color: rgb(23, 72, 90)" class="p-3">login</a>
+    </div>
+
+    <hr style="background-color:lightgreen; height:5px;">
+    <br>
+
+    {% block content %}
+        
+    {% endblock content %}
+
+    {% for message in messages %}
+        <input type="hidden" value="{{ message }}" id="get_message">
+
+        <script>
+            var msg = document.getElementById("get_message").value;
+            alert(msg)
+        </script>
+    {% endfor %}
+
+
+</body>
+</html>

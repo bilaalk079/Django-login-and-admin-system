@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+   <form action="" method="POST">
+    {% csrf_token %}
+   <div class="row">
+    <div class="col-sm-4">
+{% comment "" %}empty{% endcomment %}
+    </div>
+    <div class="col-sm-4">
+        <input type="text" class="form-control " name="username" required placeholder="username">
+        <br>
+        <input type="password" class="form-control" name="password" required placeholder="password">
+        <br>
+        <button type="submit" class="btn btn-lg btn-success">submit</button>
+    </div>
+    <div class="col-sm-4">
+        {% comment "" %}empty{% endcomment %}
+    </div>
+   </div>
+</form>
+{% endblock content %}

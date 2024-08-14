@@ -1,0 +1,29 @@
+{% extends 'admin_dashboardbase.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+  Admin Dashboard
+{% endblock %}
+{% block content %}
+  <ul>
+    <li>Name: {{ user.userinfo.name }}</li>
+    <li>number: {{ user.userinfo.phone }}</li>
+    <li>Email: {{ user.email }}</li>
+  </ul>
+  <br />
+  <div class="row text-center">
+    <div class="col-sm-6">
+      <a href="/all_users">
+        <span class="fa fa-users" style="font-size: 80px; color: lightgreen;"></span>
+        <h4>All users</h4>
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="/edit_admin">
+        <span class="fa fa-pencil-square" style="font-size: 80px; color: lightgreen; "></span>
+        <h4>Edit Admin Profile</h4>
+      </a>
+    </div>
+  </div>
+{% endblock %}

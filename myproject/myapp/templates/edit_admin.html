@@ -1,0 +1,51 @@
+{% extends 'admin_dashboard.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}Edit Admin Profile{% endblock title %}
+{% block content %}
+<h2>Edit Admin Profile</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="get_id" value="{{user.id}}">
+    <br><br>
+    <label for="">Name:</label>
+    <input type="text" name="name" class="form-control" required maxlength="70" value="{{user.first_name}}">
+    <br>
+    <label for="">Phone</label>
+    <input type="tel" class="form-control" name="phone" required maxlength="11" value="{{user.userinfo.phone}}"> 
+    <br>
+    <label for="">Email</label>
+    <input type="email" name="email" class="form-control" required maxlength="50" value="{{user.email}}">
+    <br>
+    <label for="">Username</label>
+    <input type="text" name="username" class="form-control" required  value="{{user.username}}">
+    <br>
+    <label for="">Password</label>
+    <input type="password" name="password" id="set_pass" class="form-control" required maxlength="20">
+    <br>
+    <label for="">Confirm password</label>
+    <input type="password" id="con_pass" class=form-control required maxlength="20">
+    <br>
+
+    <center>
+        <button type="submit" class="btn btn-success" id="check_submit">Update</button>
+    </center>
+
+</form>
+
+<script>
+$(document).ready(function(){
+    $('#check_pass').click(function(){
+        var set_pass = document.getElementById('set_pass').value;
+        var con_pass = document.getElementById('con_pass').value;
+        if (set_pass !== con_pass){
+            alert('Password does not match!');
+            return false;
+        } else {
+            return true;
+        }
+    });
+});
+</script>
+{% endblock content %}

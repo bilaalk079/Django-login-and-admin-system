@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %} Calculator {% endblock title %} 
+
+{% block  content %}
+<h3>Calculator</h3>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="">First Number:</label>
+    <input type="number" name="first_num" class="form-control w-50">
+    <br>
+
+    <label for="">Operator</label>
+    <select name="operator" class="form-control w-50">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+    </select>
+    <br>
+
+    <label for="">Second Number:</label>
+    <input type="number" name="second_num" class="form-control w-50">
+    <br>
+
+    <button class="btn btn-primary" type="submit">Calculate</button>
+
+</form>
+
+<h3>Our Answer is {{answer}}</h3>
+<br><br>
+
+{% endblock content %}

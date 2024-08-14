@@ -1,0 +1,14 @@
+{% extends 'dashboardbase.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Dashboard{% endblock title %}
+{% block content %}
+    <ul>
+        <li>Name: {{user.first_name}}</li>
+        <li>number: {{user.userinfo.phone}}</li>
+        <li>Email: {{user.email}}</li>
+        <li>Date of Birth: {{user.userinfo.dob|date:'jS F Y'}}</li>
+        <li>Contribution</li>
+    </ul>
+{% endblock content %}
