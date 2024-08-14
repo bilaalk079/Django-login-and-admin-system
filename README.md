@@ -26,19 +26,19 @@ To use this project follow the steps below
 
 4.**Download and install XAMPP.**
 
-   ##Start XAMPP Services:
+   Start XAMPP Services:
 
-   ##Start Apache and MySQL from the XAMPP Control Panel.
+   Start Apache and MySQL from the XAMPP Control Panel.
 
-   ##Create the Database:
+   Create the Database:
 
-   ##Open a web browser and go to http://localhost/phpmyadmin/.
+   Open a web browser and go to http://localhost/phpmyadmin/.
    
-   ##Create a new database named your-database-name.
+   Create a new database named your-database-name.
    
-   ##Update Database Settings:
+   Update Database Settings:
 
-   ###Ensure the following settings in settings.py:
+   Ensure the following settings in settings.py:
    ```bash
       DATABASES = {
     'default': {
@@ -51,19 +51,22 @@ To use this project follow the steps below
     }
 }
 ```
-##Run Migrations:
+#Run Migrations:
+```bash
+python manage.py makemigrations
+```
 
-###Apply the migrations to set up the database schema:
+#Apply the migrations to set up the database schema:
  ```bash
   python manage.py migrate
 ```
-##Run the Development Server:
+#Run the Development Server:
 ```bash
 python manage.py runserver
 ```
-##Access the Project:
+#Access the Project:
 
-###Open a web browser and go to http://127.0.0.1:8000/ to access the project.
+#Open a web browser and go to http://127.0.0.1:8000/ to access the project.
  you can customize 'your-database-name' into any name of your choice
 
    
