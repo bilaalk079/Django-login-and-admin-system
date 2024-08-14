@@ -3,7 +3,7 @@ from django.contrib import messages
 from datetime import datetime
 from dateutil.parser import parse
 time_millisec = datetime.now()
-from may.models import *
+from myapp.models import *
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.models import make_password
 from django.contrib.auth.decorators import login_required
