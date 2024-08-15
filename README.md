@@ -35,11 +35,11 @@ pip install -r requirements.txt
 
 7.Start Apache and MySQL from the XAMPP Control Panel.
 
-8.Create the Database:
+### 8. Create the Database:
 
-   Open a web browser and go to http://localhost/phpmyadmin/.
+    Open a web browser and go to http://localhost/phpmyadmin/.
    
-   Create a new database named your-database-name.
+    Create a new database named your-database-name.
    
 9.Update Database Settings:
 
