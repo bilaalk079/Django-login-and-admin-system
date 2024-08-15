@@ -16,7 +16,8 @@ To use this project follow the steps below
 
    ```bash
    git clone https://github.com/bilaalk079/Django-login-and-admin-system
- 2.**Create and Activate a Virtual Environment:**
+   ```
+### 2. **Create and Activate a Virtual Environment:**
    ```bash
     python -m venv env
     source env/bin/activate  # On Windows use `env\Scripts\activate`
