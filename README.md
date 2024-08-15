@@ -37,9 +37,9 @@ pip install -r requirements.txt
 
 ### 8. Create the Database:
 
-    Open a web browser and go to http://localhost/phpmyadmin/.
+   Open a web browser and go to http://localhost/phpmyadmin/.
    
-    Create a new database named your-database-name.
+   Create a new database named your-database-name.
    
 9.Update Database Settings:
 
