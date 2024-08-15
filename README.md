@@ -12,7 +12,7 @@ To use this project follow the steps below
 
 ### Installation
 
-1. **Clone the Repository:**
+### 1. **Clone the Repository:**
 
    ```bash
    git clone https://github.com/bilaalk079/Django-login-and-admin-system
@@ -21,19 +21,19 @@ To use this project follow the steps below
     python -m venv env
     source env/bin/activate  # On Windows use `env\Scripts\activate`
    ```
-Install the Requirements:
+ Install the Requirements:
 
-3.Install the project dependencies listed in the requirements.txt file.
+### 3. Install the project dependencies listed in the requirements.txt file.
 ```bash
 pip install -r requirements.txt
 ```
-4.**Database Setup with XAMPP**
+### 4. **Database Setup with XAMPP**
 
-5.**Download and install XAMPP.**
+### 5. **Download and install XAMPP.**
 
-6.Start XAMPP Services:
+### 6. Start XAMPP Services:
 
-7.Start Apache and MySQL from the XAMPP Control Panel.
+### 7. Start Apache and MySQL from the XAMPP Control Panel.
 
 ### 8. Create the Database:
 
@@ -41,7 +41,7 @@ pip install -r requirements.txt
    
    Create a new database named your-database-name.
    
-9.Update Database Settings:
+### 9. Update Database Settings:
 
    Ensure the following settings in settings.py:
    ```bash
@@ -56,20 +56,20 @@ pip install -r requirements.txt
     }
 }
 ```
-10.Run Migrations:
+### 10. Run Migrations:
 ```bash
 python manage.py makemigrations
 ```
 
-11.Apply the migrations to set up the database schema:
+### 11. Apply the migrations to set up the database schema:
  ```bash
   python manage.py migrate
 ```
-12.Run the Development Server:
+### 12. Run the Development Server:
 ```bash
 python manage.py runserver
 ```
-13.Access the Project:
+### 13. Access the Project:
 
 Open a web browser and go to http://127.0.0.1:8000/ to access the project.
  you can customize 'your-database-name' into any name of your choice.
