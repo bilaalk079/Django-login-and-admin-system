@@ -15,7 +15,7 @@ To use this project follow the steps below
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/bilaalk079/Django-login-and-admin-system
  2.**Create and Activate a Virtual Environment:**
    ```bash
     python -m venv env
