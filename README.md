@@ -21,22 +21,27 @@ To use this project follow the steps below
     python -m venv env
     source env/bin/activate  # On Windows use `env\Scripts\activate`
    ```
+Install the Requirements:
 
-3.**Database Setup with XAMPP**
+3.Install the project dependencies listed in the requirements.txt file.
+```bash
+pip install -r requirements.txt
+```
+4.**Database Setup with XAMPP**
 
-4.**Download and install XAMPP.**
+5.**Download and install XAMPP.**
 
-   Start XAMPP Services:
+6.Start XAMPP Services:
 
-   Start Apache and MySQL from the XAMPP Control Panel.
+7.Start Apache and MySQL from the XAMPP Control Panel.
 
-   Create the Database:
+8.Create the Database:
 
    Open a web browser and go to http://localhost/phpmyadmin/.
    
    Create a new database named your-database-name.
    
-   Update Database Settings:
+9.Update Database Settings:
 
    Ensure the following settings in settings.py:
    ```bash
@@ -51,20 +56,20 @@ To use this project follow the steps below
     }
 }
 ```
-#Run Migrations:
+10.Run Migrations:
 ```bash
 python manage.py makemigrations
 ```
 
-Apply the migrations to set up the database schema:
+11.Apply the migrations to set up the database schema:
  ```bash
   python manage.py migrate
 ```
-Run the Development Server:
+12.Run the Development Server:
 ```bash
 python manage.py runserver
 ```
-Access the Project:
+13.Access the Project:
 
 Open a web browser and go to http://127.0.0.1:8000/ to access the project.
  you can customize 'your-database-name' into any name of your choice.
